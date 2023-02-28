@@ -4,14 +4,15 @@ import logo from '../pokeball.png'
 
 function NavBar(){
   
-  return (<div className='navDiv'>
+  return (
+  <div className='navDiv'>
     <header className='navHeader'>
-      <img className='logo' src={logo} alt='logo'/>
+      <NavLink to='/'><img className='logo' src={logo} alt='logo'/></NavLink>
       <nav>
         <ul className='navLinks'>
-          <li><a href='#'>Home</a></li>
-          <li><a href='#'>All Pokemon</a></li>
-          <li><a href='#'>Trainers</a></li>
+          <li><NavLink to='/'>Home</NavLink></li>
+          <li><NavLink to='/pokemon'>All Pokemon</NavLink></li>
+          <li><NavLink to='/trainers'>Trainers</NavLink></li>
         </ul>
       </nav>
       <a  href='#'><button className='contactButton'>Contact</button></a>

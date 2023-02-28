@@ -91,6 +91,13 @@ body {
   text-align: center;
   font-size: 20px;
   padding: 10px;
+  color: #000;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+  #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+ -webkit-font-smoothing: antialiased;
+ border-bottom-width: 1px;
+ border-bottom-color: black;
+ border-bottom-style: solid;
 }
 
 .cardType {
@@ -199,95 +206,219 @@ body {
 .cardContentpoison {
   background-color: #C183C1;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentsteel{
   background-color: #D1D1E0;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentrock{
   background-color: #D1C17D;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentdark{
   background-color: #A29288;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentfairy{
   background-color: #EE99AC;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentflying{
   background-color: #C6B7F5;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentfighting{
   background-color: #D67873;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentice{
   background-color: #BCE6E6;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentdragon{
   background-color: #A27DFA;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentbug{
   background-color: #C6D16E;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentfire{
   background-color: #F5AC78;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentghost{
   background-color: #A292BC;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentnormal{
   background-color: #C6C6A7;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentground{
   background-color: #EBD69D;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentwater{
   background-color: #9DB7F5;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentgrass{
   background-color: #A7DB8D;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentelectric{
   background-color: #FAE078;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardContentpsychic{
   background-color: #FA92B2;
   padding: 10px;
+  min-height: 232px;
 }
 
 .cardButton {
   text-align: center;
   font-size: 14px;
   padding: 20px;
+}
+
+.cardButtonA {
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.cardButtonA:hover {
+  text-decoration: underline;
+  transition: all 0.3s ease 0s;
+}
+
+.cardDesc {
+  padding: 10px;
+  font-weight: bold;
+  color: #000;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+  #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.detailContainer {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.pokeMoves {
+  list-style-type: none;
+  margin: 5px;
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+  #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+
+.movesHeader {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 5px;
+  color: #000;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+  #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.allTrainersDiv {
+  margin: 0 auto;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.trainerCard {
+  display: inline-flex;
+  height: 120;
+  width: 500px;
+  margin: 5%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 2.5px 2.5px 10px black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.trainerCard:hover{
+  width: 600px;
+}
+
+.trainerImg {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.tainerName{
+  padding: 30px 10px;
+  width: 400px;
+  align-items: center;
+}
+
+.trainerLink {
+  padding: 30px 10px;
+  width: 60px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s;
+  transform: translateX(70px);
+}
+
+.trainerLink:hover {
+  color: red;
+}
+
+.trainerCard:hover .trainerLink{
+  transform: translateX(0px);
 }
