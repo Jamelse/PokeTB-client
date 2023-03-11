@@ -7,6 +7,7 @@ import AllPokemon from './AllPokemon';
 import PokemonDetail from './PokemonDetail';
 import TrainerDetail from './TrainerDetail';
 import EditTrainerForm from './EditTrainerForm';
+import EditPokemonForm from './EditPokemonForm';
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -57,6 +58,9 @@ function App() {
         </Route>
         <Route path='/trainers/:id/edit' element={
           <EditTrainerForm onTrainerUpdate={onTrainerUpdate}/>}>
+        </Route>
+        <Route path='/pokemon/:id/edit' element={
+          <EditPokemonForm />}>
         </Route>
         </Routes>
     </div>

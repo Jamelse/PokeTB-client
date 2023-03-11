@@ -343,6 +343,7 @@ body {
 .detailContainer {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   
 }
 
@@ -531,4 +532,36 @@ body {
 
 .formInput:focus {
   border: 3px solid red;
+}
+
+.pokeDetailPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.editPokemonButton {
+  background-color: red;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.editPokemonLink {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: all 0.3s ease 0s;
+}
+
+.editPokemonButton:hover {
+  background-color: #ffff;
+}
+
+.editPokemonButton:hover .editPokemonLink {
+  color: #000;
 }

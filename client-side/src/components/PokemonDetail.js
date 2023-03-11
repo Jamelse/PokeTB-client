@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router-dom";
 import PokeCard from "./PokeCard";
 
 function PokemonDetail(){
@@ -14,6 +14,9 @@ function PokemonDetail(){
 
 
   return (
+    <div className="pokeDetailPage">
+     <button className="editPokemonButton">
+      <Link to={`/pokemon/${id}/edit`} className='editPokemonLink'>Edit Pokemon</Link></button>
     <div className='detailContainer'>
     {pokeDetail ? <PokeCard poke={pokeDetail} children={
       <>
@@ -26,6 +29,7 @@ function PokemonDetail(){
       </ul>
       </>
     }/> : <h1>Loading...</h1>}
+    </div>
     </div>
   )
 
