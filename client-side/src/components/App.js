@@ -5,6 +5,8 @@ import Home from './Home';
 import Trainers from './Trainers';
 import AllPokemon from './AllPokemon';
 import PokemonDetail from './PokemonDetail';
+import TrainerDetail from './TrainerDetail';
+import EditTrainerForm from './EditTrainerForm';
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -20,6 +22,20 @@ function App() {
     .then(data => setTrainers(data))
   }, [])
 
+  function onTrainerUpdate(updatedTrainer){
+    setTrainers(trainers.map(
+      (trainer => trainer.id===updatedTrainer.id ? updatedTrainer : trainer)))
+  }
+
+  function onTrainerDelete(trainerId){
+    setTrainers(trainers.filter(train => train.id != trainerId))
+    setPokemon(pokemon.filter(poke => poke.trainer_id != trainerId))
+  }
+
+  function capitalize(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   return (
     <div>
     <NavBar />
@@ -28,13 +44,19 @@ function App() {
           <Home />}>
         </Route>
         <Route path='/pokemon' element={
-          <AllPokemon pokemon={pokemon}/>}>
+          <AllPokemon pokemon={pokemon} capitalize={capitalize}/>}>
         </Route>
         <Route path='/pokemon/:id' element={
-          <PokemonDetail/>}>
+          <PokemonDetail />}>
         </Route>
         <Route path='/trainers' element={
           <Trainers trainers={trainers}/>}>
+        </Route>
+        <Route path='/trainers/:id' element={
+          <TrainerDetail capitalize={capitalize} onTrainerDelete={onTrainerDelete}/>}>
+        </Route>
+        <Route path='/trainers/:id/edit' element={
+          <EditTrainerForm onTrainerUpdate={onTrainerUpdate}/>}>
         </Route>
         </Routes>
     </div>

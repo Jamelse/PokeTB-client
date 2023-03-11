@@ -7,10 +7,6 @@ function PokeCard({poke, children}){
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  function buttonHandler(e){
-    console.log(e)
-  }
-
   return (
     <div className='pokeCard'>
         <div className={`cardImg${poke.poke_type}`}>

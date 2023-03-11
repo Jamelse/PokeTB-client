@@ -13,6 +13,7 @@ function NavBar(){
           <li><NavLink to='/'>Home</NavLink></li>
           <li><NavLink to='/pokemon'>All Pokemon</NavLink></li>
           <li><NavLink to='/trainers'>Trainers</NavLink></li>
+          <li><NavLink to='/trainers/new'>New Trainer</NavLink></li>
         </ul>
       </nav>
       <a  href='#'><button className='contactButton'>Contact</button></a>
