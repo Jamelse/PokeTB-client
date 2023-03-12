@@ -3,7 +3,7 @@ import PokeCard from "./PokeCard";
 import {Link} from 'react-router-dom'
 
 function AllPokemon({pokemon, capitalize}){
-
+  
   return(
     <div className='cardContainer'>
       {pokemon.map((poke) => {

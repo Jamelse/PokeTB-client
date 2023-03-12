@@ -12,6 +12,7 @@ import EditPokemonForm from './EditPokemonForm';
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [trainers, setTrainers] = useState([]);
+  const [moves, setMoves] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:9292/pokemon')
@@ -21,16 +22,30 @@ function App() {
     fetch('http://localhost:9292/trainers')
     .then(r => r.json())
     .then(data => setTrainers(data))
+
+    fetch('http://localhost:9292/moves')
+    .then(r => r.json())
+    .then(data => setMoves(data))
   }, [])
+
+  function onPokemonUpdate(updatedPokemon){
+    setPokemon(pokemon.map(
+      poke => poke.id===updatedPokemon.id ? updatedPokemon : poke))
+  }
 
   function onTrainerUpdate(updatedTrainer){
     setTrainers(trainers.map(
-      (trainer => trainer.id===updatedTrainer.id ? updatedTrainer : trainer)))
+      trainer => trainer.id===updatedTrainer.id ? updatedTrainer : trainer))
   }
 
   function onTrainerDelete(trainerId){
     setTrainers(trainers.filter(train => train.id != trainerId))
     setPokemon(pokemon.filter(poke => poke.trainer_id != trainerId))
+  }
+
+  function onPokemonDelete(pokeId){
+    setPokemon(pokemon.filter(poke => poke.id != pokeId))
+    setMoves(moves.filter(move => move.pokemon_id != pokeId))
   }
 
   function capitalize(str){
@@ -54,13 +69,13 @@ function App() {
           <Trainers trainers={trainers}/>}>
         </Route>
         <Route path='/trainers/:id' element={
-          <TrainerDetail capitalize={capitalize} onTrainerDelete={onTrainerDelete}/>}>
+          <TrainerDetail capitalize={capitalize} onTrainerDelete={onTrainerDelete} moves={moves} onPokemonDelete={onPokemonDelete}/>}>
         </Route>
         <Route path='/trainers/:id/edit' element={
           <EditTrainerForm onTrainerUpdate={onTrainerUpdate}/>}>
         </Route>
         <Route path='/pokemon/:id/edit' element={
-          <EditPokemonForm />}>
+          <EditPokemonForm onPokemonUpdate={onPokemonUpdate}/>}>
         </Route>
         </Routes>
     </div>

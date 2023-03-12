@@ -493,10 +493,10 @@ body {
 }
 
 .trainerDetailPokeName {
-  padding: 10px;
+  padding: 10px 50px 10px 10px;
 }
 
-.editTrainerForm {
+.editForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -564,4 +564,68 @@ body {
 
 .editPokemonButton:hover .editPokemonLink {
   color: #000;
+}
+
+.pokeLabel{
+  color: #ffff;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.pokeTypeSelect {
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.editPokeMoves {
+  color: #ffff;
+  text-decoration: underline;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+.backButton {
+  background-color: red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease 0s;
+}
+
+.backButton:hover{
+  background-color: #ffff;
+  color: black;
+}
+
+.backLink{
+  padding: 10px;
+}
+
+.trainerLinks {
+ width: 100%;
+  color: rgba(0, 0, 0, 0.555);
+  height: 10px;
+  padding: 10px 1px;
+  font-style: italic;
+  font-size: small;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.linkSpan {
+  color: rgba(0, 0, 0, 0.555);
+  padding: 10px 5px;
+  font-size:medium;
+  font-weight: bolder;
 }

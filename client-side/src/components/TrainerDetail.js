@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useParams, Link, useNavigate} from 'react-router-dom'
 
-function TrainerDetail({capitalize, onTrainerDelete}){
+function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
   const [trainerDetail, setTrainerDetail] = useState(null)
   const {id} = useParams();
   const navigate = useNavigate();
@@ -12,15 +12,41 @@ function TrainerDetail({capitalize, onTrainerDelete}){
     .then(detail => setTrainerDetail(detail))
   },[])
 
+  function pokeDelete(poke){
+    const move = moves.find(move => move.pokemon_id == poke.id)
+    const filteredPokemon = trainerDetail.pokemons.filter(pokemon =>  {
+      return pokemon.id != poke.id})
+
+      fetch(`http://localhost:9292/moves/${move.id}`, {
+        method: "DELETE"
+      })
+      .then(r =>r.json())
+      
+      fetch(`http://localhost:9292/pokemon/${poke.id}`, {
+        method: "DELETE"
+      })
+      .then(r => r.json())
+      .then((deleted) => {
+        onPokemonDelete(deleted.id)
+        setTrainerDetail((prev) => {
+          return {...prev, pokemons: filteredPokemon}})
+      })
+      
+  }
+
   function trainerDeleteClick(){
+    trainerDetail.pokemons.map(poke => {
+      pokeDelete(poke)
+      })
+
     fetch(`http://localhost:9292/trainers/${id}`, {
       method: "DELETE"
-    })
-    .then(r => r.json())
-    .then(() =>{
-      onTrainerDelete(id)
-      navigate('/trainers')
-    })
+      })
+      .then(r => r.json())
+      .then(() =>{
+        onTrainerDelete(id)
+        navigate('/trainers')
+      })
   }
 
   return (trainerDetail ? 
@@ -39,6 +65,9 @@ function TrainerDetail({capitalize, onTrainerDelete}){
               <div className="trainerDetailPokemon">
                 <img className="trainerDetailSprite" src={pokemon.sprite}/>
                 <p className="trainerDetailPokeName">{capitalize(pokemon.name)}</p>
+                <Link to={`/pokemon/${pokemon.id}/edit`} className="trainerLinks">Edit</Link>
+                <span className="linkSpan">/</span>
+                <p onClick={() => pokeDelete(pokemon)}className="trainerLinks">Delete</p>
               </div>
                 )})}
         </div>

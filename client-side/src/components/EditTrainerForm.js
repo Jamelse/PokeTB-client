@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 
 function EditTrainerForm({onTrainerUpdate}){
   const {id} = useParams();
@@ -33,9 +33,10 @@ function EditTrainerForm({onTrainerUpdate}){
   }
 
   return (
-    <div className='editTrainerDiv'>
-    <form onSubmit={trainerFormSubmit} className='editTrainerForm'>
     <div>
+      <Link className='backLink' to={`/trainers/${id}`}><button className='backButton'>Back</button></Link>
+    <form onSubmit={trainerFormSubmit} className='editForm'>
+    <div className='editTrainerDiv'>
       <input
       className='formInput'
       name='name'
