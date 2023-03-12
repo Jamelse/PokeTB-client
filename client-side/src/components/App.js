@@ -8,6 +8,7 @@ import PokemonDetail from './PokemonDetail';
 import TrainerDetail from './TrainerDetail';
 import EditTrainerForm from './EditTrainerForm';
 import EditPokemonForm from './EditPokemonForm';
+import NewTrainerForm from './NewTrainerForm';
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -27,6 +28,10 @@ function App() {
     .then(r => r.json())
     .then(data => setMoves(data))
   }, [])
+
+  function newTrainer(trainer){
+    setTrainers([...trainers, trainer])
+  }
 
   function onPokemonUpdate(updatedPokemon){
     setPokemon(pokemon.map(
@@ -76,6 +81,9 @@ function App() {
         </Route>
         <Route path='/pokemon/:id/edit' element={
           <EditPokemonForm onPokemonUpdate={onPokemonUpdate}/>}>
+        </Route>
+        <Route path='/trainers/new' element={
+          <NewTrainerForm newTrainer={newTrainer}/>}> 
         </Route>
         </Routes>
     </div>

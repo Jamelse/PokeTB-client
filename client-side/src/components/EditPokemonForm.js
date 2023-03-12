@@ -65,7 +65,7 @@ return(
   {currentInfo && currentMoves ? 
   <form onSubmit={onPokeEditSubmit} className='editForm'>
     <div>
-      <h2 className='editPokeMoves'>Pokemon:</h2>
+      <h2 className='editHeaders'>Pokemon:</h2>
     <label className='pokeLabel'>Pokemon Name:</label>
     <input
       className='formInput'
@@ -116,7 +116,7 @@ return(
     <option value="water">Water</option>
   </select>
   <br/>
-  <h2 className='editPokeMoves'>Moves:</h2>
+  <h2 className='editHeaders'>Moves:</h2>
   <label className='pokeLabel'>Move:</label>
     <input
       className='formInput'
@@ -152,7 +152,7 @@ return(
       type='submit'>
         Done
     </button>
-  </form> : <h1 className='editPokeMoves'>Loading...</h1>} 
+  </form> : <h1 className='editHeaders'>Loading...</h1>} 
 </div>)
 }
 
