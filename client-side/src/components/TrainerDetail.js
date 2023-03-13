@@ -48,11 +48,17 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
         navigate('/trainers')
       })
   }
+  
+  function addPokeClickHandler(){
+    if (trainerDetail.pokemons.length >= 4){
+      alert('Team is full!')
+    } else
+    navigate(`/trainers/${id}/pokemon/new`)
+  }
 
-  console.log(trainerDetail)
   return (trainerDetail ? 
   <div className="trainerDetailContainer">
-    <Link to={`/trainers/${id}/pokemon/new`}><button>Add Pokemon</button></Link>
+    <button onClick={() => addPokeClickHandler()}>Add Pokemon</button>
     <Link to={`/trainers/${id}/edit`}><button>Edit Trainer</button></Link>
     <button onClick={trainerDeleteClick}>Delete Trainer</button>
     <div className="trainerDetailCard">

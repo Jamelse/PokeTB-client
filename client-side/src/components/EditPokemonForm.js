@@ -39,7 +39,7 @@ function EditPokemonForm({onPokemonUpdate}){
       body: JSON.stringify(currentMoves)
     })
     .then(r => r.json())
-    .then(() => navigate(`/pokemon/${id}`))
+    .then(() => navigate(-1))
   }
 
   function handleMoveChange(e){

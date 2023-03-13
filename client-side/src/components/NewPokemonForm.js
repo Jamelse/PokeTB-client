@@ -1,14 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 function NewPokemonForm({newPokemon, newMoves}){
   const navigate = useNavigate();
   const {id} = useParams();
-  const [pokeArray, setPokeArray] = useState([])
   const [pokeFormData, setPokeFormData] = useState({
     name: '',
     sprite: '',
-    poke_type: '',
+    poke_type: 'bug',
     description: '',
     trainer_id: id
   })
@@ -19,12 +18,6 @@ function NewPokemonForm({newPokemon, newMoves}){
     move_4: '',
     pokemon_id: ''
   })
-
-  useEffect(() => {
-    fetch(`http://localhost:9292/trainers/${id}/pokemon`)
-    .then(r => r.json())
-    .then(data => setPokeArray(data))
-  }, [])
 
   function handlePokeChange(e){
     const key = e.target.name
@@ -44,10 +37,6 @@ function NewPokemonForm({newPokemon, newMoves}){
 
   function onNewPokeSubmit(e){
     e.preventDefault();
-    if (pokeArray.length >= 4) {
-      alert('Team is full!')
-    } 
-    else
     fetch(`http://localhost:9292/trainers/${id}/pokemon`, {
       method: "POST",
       headers: {
