@@ -9,6 +9,7 @@ import TrainerDetail from './TrainerDetail';
 import EditTrainerForm from './EditTrainerForm';
 import EditPokemonForm from './EditPokemonForm';
 import NewTrainerForm from './NewTrainerForm';
+import NewPokemonForm from './NewPokemonForm';
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -30,7 +31,15 @@ function App() {
   }, [])
 
   function newTrainer(trainer){
-    setTrainers([...trainers, trainer])
+    setTrainers([trainer, ...trainers])
+  }
+
+  function newPokemon(poke){
+    setPokemon([poke, ...pokemon])
+  }
+
+  function newMoves(move){
+    setMoves([move, ...moves])
   }
 
   function onPokemonUpdate(updatedPokemon){
@@ -84,6 +93,9 @@ function App() {
         </Route>
         <Route path='/trainers/new' element={
           <NewTrainerForm newTrainer={newTrainer}/>}> 
+        </Route>
+        <Route path='/trainers/:id/pokemon/new' element={
+          <NewPokemonForm newPokemon={newPokemon} newMoves={newMoves}/>}>
         </Route>
         </Routes>
     </div>

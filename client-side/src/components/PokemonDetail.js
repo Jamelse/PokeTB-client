@@ -15,8 +15,8 @@ function PokemonDetail(){
 
   return (
     <div className="pokeDetailPage">
-     <button className="editPokemonButton">
-      <Link to={`/pokemon/${id}/edit`} className='editPokemonLink'>Edit Pokemon</Link></button>
+     
+      <Link to={`/pokemon/${id}/edit`} className='editPokemonLink'><button className="editPokemonButton">Edit Pokemon</button></Link>
     <div className='detailContainer'>
     {pokeDetail ? <PokeCard poke={pokeDetail} children={
       <>

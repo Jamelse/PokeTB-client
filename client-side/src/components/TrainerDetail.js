@@ -49,9 +49,10 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
       })
   }
 
+  console.log(trainerDetail)
   return (trainerDetail ? 
   <div className="trainerDetailContainer">
-    <button>Add Pokemon</button>
+    <Link to={`/trainers/${id}/pokemon/new`}><button>Add Pokemon</button></Link>
     <Link to={`/trainers/${id}/edit`}><button>Edit Trainer</button></Link>
     <button onClick={trainerDeleteClick}>Delete Trainer</button>
     <div className="trainerDetailCard">

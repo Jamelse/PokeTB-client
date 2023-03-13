@@ -4,7 +4,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom'
 function EditTrainerForm({onTrainerUpdate}){
   const {id} = useParams();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState('')
+  const [formData, setFormData] = useState("")
 
   useEffect(() => {
     fetch(`http://localhost:9292/trainers/${id}`)
@@ -35,6 +35,8 @@ function EditTrainerForm({onTrainerUpdate}){
     })
   }
 
+  console.log(formData)
+
   return (
     <div>
       <Link className='backLink' to={`/trainers/${id}`}><button className='backButton'>Back</button></Link>
@@ -44,14 +46,12 @@ function EditTrainerForm({onTrainerUpdate}){
       className='formInput'
       name='name'
       type='text'
-      placeholder='Trainer Name..'
       onChange={handleChange}
       value={formData.name}/>
       <input
       className='formInput'
       name='trainer_img' 
       type='text'
-      placeholder="Trainer Image URL..."
       onChange={handleChange}
       value={formData.trainer_img}/>
       </div>
