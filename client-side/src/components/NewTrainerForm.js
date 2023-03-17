@@ -34,7 +34,7 @@ function NewTrainerForm({newTrainer}){
 
   return (
     <div>
-      <button className='backButton'>Back</button>
+      <button onClick={() => navigate(-1)}className='backButton'>Back</button>
       <form  onSubmit={onNewSubmit} className='editForm'>
         <div className='editTrainerDiv'>
           <label className='pokeLabel'>Name:</label>
@@ -57,7 +57,8 @@ function NewTrainerForm({newTrainer}){
       <button
       className='formSubmitButton' 
       type='submit'>
-        Done</button>
+      Done
+      </button>
       </form>
     </div>
   )

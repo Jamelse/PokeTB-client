@@ -8,7 +8,7 @@ function AllPokemon({pokemon, capitalize}){
     <div className='cardContainer'>
       {pokemon.map((poke) => {
         return (
-          <PokeCard poke={poke} capitalize={capitalize} children={
+          <PokeCard key={poke.id} poke={poke} capitalize={capitalize} children={
           <h1 className='cardButton'><Link className='cardButtonA' to={`/pokemon/${poke.id}`}>More Info</Link></h1>}/>
         )
       })}

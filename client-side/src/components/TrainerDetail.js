@@ -58,9 +58,6 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
 
   return (trainerDetail ? 
   <div className="trainerDetailContainer">
-    <button onClick={() => addPokeClickHandler()}>Add Pokemon</button>
-    <Link to={`/trainers/${id}/edit`}><button>Edit Trainer</button></Link>
-    <button onClick={trainerDeleteClick}>Delete Trainer</button>
     <div className="trainerDetailCard">
       <img className="trainerDetailImg" src={trainerDetail.trainer_img}/>
       <div className="trainerDetailContent">
@@ -69,7 +66,7 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
         <br/>
             {trainerDetail.pokemons.map((pokemon) => {
             return(
-              <div className="trainerDetailPokemon">
+              <div className="trainerDetailPokemon" key={pokemon.id}>
                 <img className="trainerDetailSprite" src={pokemon.sprite}/>
                 <p className="trainerDetailPokeName">{capitalize(pokemon.name)}</p>
                 <Link to={`/pokemon/${pokemon.id}/edit`} className="trainerLinks">Edit</Link>
@@ -80,6 +77,11 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
         </div>
       </div>
    </div>
+   <div className="trainerDetailButtons">
+      <button onClick={() => addPokeClickHandler()} className='trainerDetailButton'>Add Pokemon</button>
+      <Link to={`/trainers/${id}/edit`} className='trainerDetailLink'><button className='trainerDetailButton'>Edit Trainer</button></Link>
+      <button onClick={trainerDeleteClick} className='trainerDetailButton'>Delete Trainer</button>
+    </div>
   </div>
   : <h1>Loading...</h1>)
 }

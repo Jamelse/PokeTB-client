@@ -35,8 +35,6 @@ function EditTrainerForm({onTrainerUpdate}){
     })
   }
 
-  console.log(formData)
-
   return (
     <div>
       <Link className='backLink' to={`/trainers/${id}`}><button className='backButton'>Back</button></Link>

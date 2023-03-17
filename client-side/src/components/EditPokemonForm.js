@@ -58,7 +58,6 @@ function EditPokemonForm({onPokemonUpdate}){
     })
   }
 
-console.log(currentInfo)
 return( 
 <div className='editPokeDiv'>
 <button className='backButton' onClick={() => navigate(-1)}>Back</button>
@@ -146,7 +145,7 @@ return(
       onChange={handleMoveChange}
       value={currentMoves.move_4}/>
       </div>
-  <br/>
+    <br/>
     <button
       className='formSubmitButton' 
       type='submit'>
