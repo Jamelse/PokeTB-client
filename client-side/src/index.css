@@ -435,16 +435,11 @@ body {
 .trainerDetailCard {
   position: relative;
   width: 350px;
-  height: 190px;
-  height: 450px;
+  height: 600px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 35px 80px rgba(0,0,0,0.15);
   transition: 0.5s;
-}
-
-.trainerDetailCard:hover{
-  height: 450px;
 }
 
 .trainerDetailImg {
@@ -455,7 +450,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
-  transition: 0.5s;
 }
 
 .trainerDetailContent {
@@ -464,7 +458,10 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+}
+
+.trainerDetailName {
+  margin-top: 70px;
 }
 
 .trainerDetail {
@@ -486,7 +483,7 @@ body {
 .trainerDetailPokemon {
   display: inline-flex;
   width: 100%;
-  padding: 2px;
+  padding: 7px;
   margin: 1px;
   border-bottom-width: 1px;
   border-bottom-color: rgba(000, 000, 000, 0.25);
@@ -496,6 +493,24 @@ body {
 .trainerDetailPokeName {
   padding: 10px 50px 10px 10px;
 }
+
+.trainerLinks {
+  width: 100%;
+   color: rgba(0, 0, 0, 0.555);
+   height: 10px;
+   padding: 10px 1px;
+   font-style: italic;
+   font-size: small;
+   text-decoration: underline;
+   cursor: pointer;
+ }
+ 
+ .linkSpan {
+   color: rgba(0, 0, 0, 0.555);
+   padding: 10px 5px;
+   font-size:medium;
+   font-weight: bolder;
+ } 
 
 .trainerDetailButtons {
   padding: 10px;
@@ -587,7 +602,6 @@ body {
   color: #000;
 }
 
-
 .pokeLabel{
   color: #ffff;
   padding: 10px;
@@ -634,20 +648,44 @@ body {
   padding: 10px;
 }
 
-.trainerLinks {
- width: 100%;
-  color: rgba(0, 0, 0, 0.555);
-  height: 10px;
-  padding: 10px 1px;
-  font-style: italic;
-  font-size: small;
-  text-decoration: underline;
-  cursor: pointer;
+.homeDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.linkSpan {
-  color: rgba(0, 0, 0, 0.555);
-  padding: 10px 5px;
-  font-size:medium;
-  font-weight: bolder;
+.homeLogoTitle {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #ffff;
+}
+
+.homeLogo {
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+}
+
+.homeSubheader {
+  color: #ffffffa4;
+}
+
+.homeButton {
+  margin: 20px;
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: large;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.homeButton:hover {
+  color: #000;
+  background-color: #ffff;
 }

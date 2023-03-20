@@ -10,6 +10,7 @@ import EditTrainerForm from './EditTrainerForm';
 import EditPokemonForm from './EditPokemonForm';
 import NewTrainerForm from './NewTrainerForm';
 import NewPokemonForm from './NewPokemonForm';
+import ContactPage from './ContactPage';
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -96,6 +97,9 @@ function App() {
         </Route>
         <Route path='/trainers/:id/pokemon/new' element={
           <NewPokemonForm newPokemon={newPokemon} newMoves={newMoves}/>}>
+        </Route>
+        <Route path='/contact' element={
+        <ContactPage />}>
         </Route>
         </Routes>
     </div>

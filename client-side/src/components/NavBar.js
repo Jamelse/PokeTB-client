@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink, useNavigate} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import logo from '../pokeball.png'
 
 function NavBar(){
@@ -16,7 +16,7 @@ function NavBar(){
           <li><NavLink to='/trainers/new'>New Trainer</NavLink></li>
         </ul>
       </nav>
-      <a  href='#'><button className='contactButton'>Contact</button></a>
+      <NavLink to='/contact'><button className='contactButton'>Contact</button></NavLink>
     </header>
   </div>)
 }

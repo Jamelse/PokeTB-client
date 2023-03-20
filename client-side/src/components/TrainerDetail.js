@@ -50,7 +50,7 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
   }
   
   function addPokeClickHandler(){
-    if (trainerDetail.pokemons.length >= 4){
+    if (trainerDetail.pokemons.length >= 6){
       alert('Team is full!')
     } else
     navigate(`/trainers/${id}/pokemon/new`)
@@ -62,7 +62,7 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
       <img className="trainerDetailImg" src={trainerDetail.trainer_img}/>
       <div className="trainerDetailContent">
         <div className="trainerDetail">
-        <h2>{trainerDetail.name}</h2>
+        <h2 className="trainerDetailName">{trainerDetail.name}</h2>
         <br/>
             {trainerDetail.pokemons.map((pokemon) => {
             return(
