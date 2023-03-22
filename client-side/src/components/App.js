@@ -78,7 +78,7 @@ function App() {
           <AllPokemon pokemon={pokemon} capitalize={capitalize}/>}>
         </Route>
         <Route path='/pokemon/:id' element={
-          <PokemonDetail />}>
+          <PokemonDetail trainers={trainers}/>}>
         </Route>
         <Route path='/trainers' element={
           <Trainers trainers={trainers}/>}>
