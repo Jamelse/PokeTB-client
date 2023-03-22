@@ -370,6 +370,40 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.pokeTrainer {
+  display: inline-flex;
+  margin: 1px;
+  color: #fff;
+  align-items: center;
+}
+
+.pokeTrainerHeader {
+  margin-right: 50px;
+  text-decoration: underline;
+}
+
+.pokeTrainerImg {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.pokeTrainerName {
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: larger;
+  transition: all 0.3s ease 0s;
+}
+
+.pokeTrainerName:hover {
+  text-decoration: underline;
+  color: red;
+}
+
 .allTrainersDiv {
   margin: 0 auto;
   max-width: 500px;
@@ -478,6 +512,7 @@ body {
 .trainerDetailSprite {
   height: 50px;
   width: 50px;
+  cursor: pointer;
 }
 
 .trainerDetailPokemon {

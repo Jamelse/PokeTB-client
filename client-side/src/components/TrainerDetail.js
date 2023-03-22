@@ -67,7 +67,7 @@ function TrainerDetail({capitalize, onPokemonDelete, moves, onTrainerDelete}){
             {trainerDetail.pokemons.map((pokemon) => {
             return(
               <div className="trainerDetailPokemon" key={pokemon.id}>
-                <img className="trainerDetailSprite" src={pokemon.sprite}/>
+                <img onClick={() => navigate(`/pokemon/${pokemon.id}`)} className="trainerDetailSprite" src={pokemon.sprite}/>
                 <p className="trainerDetailPokeName">{capitalize(pokemon.name)}</p>
                 <Link to={`/pokemon/${pokemon.id}/edit`} className="trainerLinks">Edit</Link>
                 <span className="linkSpan">/</span>
