@@ -666,15 +666,15 @@ body {
 .homeLogo {
   height: 100px;
   width: 100px;
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 .homeSubheader {
   color: #ffffffa4;
+  margin: 20px;
 }
 
 .homeButton {
-  margin: 20px;
   background-color: red;
   color: #fff;
   padding: 10px 20px;
@@ -688,4 +688,34 @@ body {
 .homeButton:hover {
   color: #000;
   background-color: #ffff;
+}
+
+.contactDiv {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.contactLink {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+
+.contactLink:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.contactRightsDiv {
+  width: 400px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
 }
